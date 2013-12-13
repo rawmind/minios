@@ -1,5 +1,5 @@
 OBJECTS=startup.o kernel.o ktty.o intslib.o ioports.o interupt_handlers.o memory_manager.o stdlib.o rtc.o
-CFLAGS= -ffreestanding -c -m32
+CFLAGS= -Wall -ffreestanding -c -m32 -O2
 LDFLAGS= -m elf_i386 --oformat binary -Ttext 0x200000
 
 
