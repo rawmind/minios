@@ -1,4 +1,4 @@
-OBJECTS=startup.o kernel.o ktty.o intslib.o ioports.o interupt_handlers.o memory_manager.o stdlib.o rtc.o
+OBJECTS=startup.o kernel.o ktty.o intslib.o ioports.o interupt_handlers.o memory_manager.o stdlib.o rtc.o pci.o
 CFLAGS= -Wall -ffreestanding -c -m32 -O2
 LDFLAGS= -m elf_i386 --oformat binary -Ttext 0x200000
 
@@ -32,6 +32,9 @@ stdlib.o: stdlib.c stdlib.h
 
 rtc.o: rtc.c rtc.h
 	gcc $(CFLAGS) -o rtc.o rtc.c
+	
+pci.o: pci.c pci.h
+	gcc $(CFLAGS) -o pci.o pci.c
 			
 clean: 
 	rm *.o

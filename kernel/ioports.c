@@ -23,3 +23,15 @@ __inline__ uint16 inw(uint16 port)
 	asm volatile ("inw %1, %0":"=a"(value):"dN"(port));
 	return value;
 }
+
+__inline__ void outl(uint16 port, uint32 value)
+{
+	asm volatile ("inl %1, %0":"=a"(value):"dN"(port));
+}
+
+__inline__ uint32 inl(uint16 port)
+{
+	uint32 value;
+	asm volatile ("inl %1, %0":"=a"(value):"dN"(port));
+	return value;
+}

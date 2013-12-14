@@ -15,8 +15,11 @@ typedef struct{
 	uint8 year;
 } RTC_Time;
 
+
 RTC_Time get_time();
 uint8 from_rtc_port(uint8 offset);
+RTC_Time get_utc_time(uint8 UTC);
+bool isBissextile(uint8 year);
 
 
 #endif /* RTC_H_ */

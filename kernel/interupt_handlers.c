@@ -14,7 +14,7 @@ void _ ## func(void)
 
 IRQ_HANDLER(irq_timer)
 {
-	RTC_Time rtcTime = get_time();
+	RTC_Time rtcTime =  get_utc_time(4);
 	printf("\rCurrent time: %x-%x-%x %x:%x:%x", rtcTime.year, rtcTime.month, rtcTime.day_of_month, rtcTime.hour, rtcTime.minute, rtcTime.second);
 }
 
